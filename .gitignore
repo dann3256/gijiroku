@@ -1,0 +1,19 @@
+# 秘密情報（APIキーなど）
+.env
+
+# 仮想環境
+.venv/
+
+# Pythonが自動で作るキャッシュ
+__pycache__/
+*.pyc
+
+# アプリが出力したWordファイル
+output/
+
+# Wordで開いている間にできる一時ファイル
+~$*.docx
+
+# エディタ・OSのファイル
+.vscode/
+Thumbs.db
