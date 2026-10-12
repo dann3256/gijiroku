@@ -13,6 +13,7 @@
 
 - Windows / PowerShell / Python 3.12
 - 仮想環境：`.venv`（コマンドは必ずWindows用を使う）
+- GitHub CLI（`gh`）：PR の作成やマージなど、GitHub の操作を AI に任せるために使う
 
 ## よく使うコマンド
 
@@ -37,11 +38,15 @@ gijiroku-filler/
 ├─ CLAUDE.md                  # このファイル（セッション開始時の情報）
 ├─ README.md                  # 人間向けの説明・環境構築手順
 ├─ app.py                     # 画面（Streamlit）と全体の流れ
+├─ requirements.txt           # 使っているライブラリの一覧
 ├─ templates/
 │  └─ minutes_template.docx   # 目印 {{ date }} などを入れた議事録フォーマット
 ├─ .claude/
 │  ├─ rules/python.md         # コードを書くときのルール
-│  └─ skills/commit/SKILL.md  # コミット手順（/commit で呼び出す）
+│  └─ skills/
+│     ├─ commit/SKILL.md      # コミット手順（/commit で呼び出す）
+│     └─ pr/SKILL.md          # PR作成〜マージ〜main更新の手順（/pr で呼び出す）
+├─ .env.example               # .env の見本（Gitに上げる）
 ├─ .env                       # APIキーなど（Gitに上げない）
 ├─ .gitignore
 └─ .venv/                     # 仮想環境（Gitに上げない）
@@ -55,3 +60,4 @@ gijiroku-filler/
 2. 今回やることを1つだけ私と確認してから始める
 3. 環境構築の詳しい手順は README.md を参照する
 4. 1つの機能を作るたびに新たなブランチを切って開始する（ブランチを切ったら報告）。ブランチ名は `.claude/skills/commit/SKILL.md` のコミットメッセージの種類に合わせる（例：`feat/memo-input`）
+5. 機能ができたら `/commit` でコミットとプッシュ、`/pr` で PR 作成からマージ・main の更新まで行う。main に直接コミットしない
